@@ -1,0 +1,58 @@
+.side_bar{
+  box-sizing: border-box;
+  width: 300px;
+  .side-header{
+    height: 100px;
+    background-color:#253141;
+    display: flex;
+    align-items: center;
+    &__box{
+      height: 20px;
+      width: 260px;
+      margin: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      &__name{
+        color: $white;
+        font-weight: bold;
+        line-height: 20px;
+      }
+      &__icons{
+        display: flex;
+        width: 60px;
+        line-height: 20px;
+        a{
+          color: $white;
+          font-size: 0.9em;
+        }
+        &__edit{
+          margin-left: auto;
+        }
+        &__conf{
+          margin-left: 5px;
+        }
+      }
+
+    }
+  }
+  .side-groups{
+    height: calc(100vh - 100px);
+    background-color: #2f3e51;
+    padding: 20px 20px;
+    a{
+    color: $white;
+    font-weight: bold;
+    .group{
+      margin-bottom: 40px;
+        &__name{
+        font-size: 15px;
+        margin-bottom: 5px;
+        }
+        &__lastlog
+        {
+        font-size: 11px;
+        }
+      }
+    }
+  }
+}
