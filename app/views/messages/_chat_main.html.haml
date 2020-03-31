@@ -2,30 +2,23 @@
   .main-header
     .main-header__left
       %h2.main-header__left__group-name
-        test
+        = @group.name
       %ul.main-header__left__list
         Member：
         %li.main-header__left__list__member
-          mario
+          - @group.group_users.each do |group_user|
+            = group_user.user.name
     .main-header__right
-      =link_to "#"do
+      =link_to edit_group_path(@group)do
         Edit
   .main-message
-    .message
-      .message__info
-        %p.message__info__speaker
-          mario
-        %p.message__info__date
-          2020/03/27(Fri) 22:00:27
-      %p.message__text
-        test
-  .main-form
-    .form-box
-      %form.form-box__form
-        .form-box__form__text
-          %input.form-box__form__text__message{type:"text",placeholder:"type a message",text_field:"content"}
-          %label.form-box__form__text__image
-            = icon('fas', 'image')
-            %input.form-box__form__text__image__label{type: "file"}
-        %input.form-box__form__submit{type:"submit",name:"commit",value:"Send"}
-    
+    = render partial: 'message', collection: @messages
+
+  .form
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'
