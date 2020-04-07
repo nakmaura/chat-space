@@ -1,4 +1,4 @@
-app_path = File.expand_path('/var/www/chat-space/', __FILE__)
+app_path = File.expand_path('/var/www/chat-space', __FILE__)
 
 worker_processes 1
 # currentを指定
