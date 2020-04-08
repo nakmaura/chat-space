@@ -35,15 +35,13 @@
 
     }
   }
+
   .side-groups{
     height: calc(100vh - 100px);
     background-color: #2f3e51;
     padding: 20px 20px;
-    a{
-    color: $white;
-    font-weight: bold;
     .group{
-      margin-bottom: 40px;
+        margin-bottom: 40px;
         &__name{
         font-size: 15px;
         margin-bottom: 5px;
@@ -51,7 +49,6 @@
         &__lastlog
         {
         font-size: 11px;
-        }
       }
     }
   }
